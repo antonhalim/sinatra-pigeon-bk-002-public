@@ -1,0 +1,15 @@
+<%= erb :'layouts/_header' %>
+
+  <h1><%= @pigeon.name %></h1>
+  <ul>
+    <li>Name: <%= @pigeon.name %></li>
+    <li>Gender: <%= @pigeon.gender %></li>
+    <li>Color: <%= @pigeon.color %></li>
+    <li>Lives: <%= @pigeon.lives %></li>
+  </ul>
+
+  <a href="/pigeons">Back</a> | 
+  <a href="/pigeons/<%= @pigeon.id %>/edit">Edit</a> | 
+  <a href="/pigeons/<%= @pigeon.id %>/destroy">Destroy</a>
+
+<%= erb :'layouts/_footer' %>
