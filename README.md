@@ -11,59 +11,34 @@ Create a Sinatra Web Application that allows us to browse a list of all pigeons,
 
 # Instructions
 
-First fork this repo. Then clone your fork and deliver your solution in master branch.
-Using the "pigeon_list" hash at bottom to populate your database. Create a controller that makes use of RESTful URLs to create, read, update, and destroy pigeons.
+First fork this repo. 
+Then clone your fork and cd into that directory.
 
-You should have the following URLs:
+From terminal run the folling commands:
 
-- /pigeons #=> shows a list of all pigeons maps to index.erb
+1. `bundle install`
+2. `rake reset`
+3. `rake setup`
+4. `rake seed`
 
-- /pigeons/1 #=> shows the pigeon with an id of 1 (should be able to change the number to map to any pidgeon with any id) maps to show.erb
+In file /app/controllers/pigeons_controller.rb make use of the appropriate RESTful paths to create, read, update, and destroy pigeons. Include the following paths
 
-- /pigeons/new #=> shows a form to create a new pigeon. the should post to /pigeons which will write the new pigeon to the database and then redirect the user back to the index list page.
+- /pigeons
+- /pigeons/new
+- /pigeons/:id
+- /pigeons/:id/edit
+- /pigeons/:id/update
+- /pigeons/:id/destroy
 
-- /pigeons/1/edit #=> shows an edit form for the pigeon with id of 1 displaying all attributes already filled in the form fields. Form will post to /pigeons/1/update to write the updated params for the pigeon and then redirect the user back to the index list page.
+These routes will map to the appropriate views /app/views/pigeons
 
-- /pigeons/1/destroy #=> will remove the pigeon from the database and then redirect the user back to the index list page.
+- index.erb
+- new.erb
+- show.erb
+- edit.erb
 
-Checkout the working solution example at: [http://sinatra-pigeon.herokuapp.com/](http://sinatra-pigeon.herokuapp.com/)
+Fill in these views with the appropriate ERB code and HTML to match the example solution at: [http://sinatra-pigeon.herokuapp.com/](http://sinatra-pigeon.herokuapp.com/)
 
-```
-pigeon_list = {
-    "Theo" => {
-      :color => ["purple", "grey"],
-      :gender => "male",
-      :lives => "Subway"
-    },
-    "Peter Jr." => {
-      :color => ["purple", "grey"],
-      :gender => "male",
-      :lives => "Library"
-    },
-    "Lucky" => {
-      :color => ["purple"],
-      :gender => "male",
-      :lives => "City Hall"
-    },
-    "Ms .K" => {
-      :color => ["grey", "white"],
-      :gender => "female",
-      :lives => "Central Park"
-    },
-    "Queenie" => {
-      :color => ["white", "brown"],
-      :gender => "female",
-      :lives => "Subway"
-    },
-    "Andrew" => {
-      :color => ["white"],
-      :gender => "male",
-      :lives => "Central Park"
-    }
-    "Alex" => {
-      :color => ["white", "brown"],
-      :gender => "male",
-      :lives => "Central Park"
-    }
-  }
-```
+Run `rackup` or `rake server` in terminal to test out the web app at localhost:9292 
+
+Deliver your solution in master branch by pushing to your personal github repo and paste repo URL into the Piazza post for this HW.
