@@ -1,6 +1,7 @@
 require 'bundler'
 
 Bundler.require(:default, ENV['RACK_ENV'].to_sym)
+
 if ENV['RACK_ENV'] == 'production'
   DataMapper.setup(:default, ENV['DATABASE_URL'])
 else # development or testing only
