@@ -2,16 +2,6 @@
 
   <img src="http://<%= @pigeon.color.delete("[],\"").split.first %>pigeon.jpg.to/" width="300">
 
-  <h1><%= @pigeon.name %></h1>
-  <ul>
-    <li>Name: <%= @pigeon.name %></li>
-    <li>Gender: <%= @pigeon.gender %></li>
-    <li>Color: <%= @pigeon.color %></li>
-    <li>Lives: <%= @pigeon.lives %></li>
-  </ul>
-
-  <a class="button" href="/pigeons">Back</a> 
-  <a class="button" href="/pigeons/<%= @pigeon.id %>/edit">Edit</a>  
-  <a class="button" href="/pigeons/<%= @pigeon.id %>/destroy">Destroy</a>
+  <!-- show attributes for a single pigeon here -->
 
 <%= erb :'layouts/_footer' %>

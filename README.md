@@ -5,13 +5,13 @@ ___
 
 # Sinatra Pigeon
 
-# Goal
+# Deliverables
 
 Create a Sinatra Web Application that allows us to browse a list of all pigeons, create new pigeons, see individual pigeons and their characteristics on their own, edit a pigeon, and delete pigeons.
 
-# Details
+# Instructions
 
-First fork this repo. Then clone your fork.
+First fork this repo. Then clone your fork and deliver your solution in master branch.
 Using the "pigeon_list" hash at bottom to populate your database. Create a controller that makes use of RESTful URLs to create, read, update, and destroy pigeons.
 
 You should have the following URLs:
