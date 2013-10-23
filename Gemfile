@@ -1,8 +1,16 @@
 source 'https://rubygems.org'
 
-gem 'sqlite3'
-gem 'dm-sqlite-adapter'
 gem 'data_mapper'
 gem 'sinatra'
-gem 'sinatra-reloader'
-gem 'pry'
+
+group :development, :test  do
+  gem 'sqlite3'
+  gem 'dm-sqlite-adapter'
+  gem 'sinatra-reloader'
+  gem 'pry'
+end
+
+group :production  do
+  gem 'pg'
+  gem 'dm-postgres-adapter'
+end
