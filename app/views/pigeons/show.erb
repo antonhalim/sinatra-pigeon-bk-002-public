@@ -1,5 +1,7 @@
 <%= erb :'layouts/_header' %>
 
+  <img src="http://<%= @pigeon.color.delete("[],\"").split.first %>pigeon.jpg.to/" width="300">
+
   <h1><%= @pigeon.name %></h1>
   <ul>
     <li>Name: <%= @pigeon.name %></li>
@@ -8,8 +10,8 @@
     <li>Lives: <%= @pigeon.lives %></li>
   </ul>
 
-  <a href="/pigeons">Back</a> | 
-  <a href="/pigeons/<%= @pigeon.id %>/edit">Edit</a> | 
-  <a href="/pigeons/<%= @pigeon.id %>/destroy">Destroy</a>
+  <a class="button" href="/pigeons">Back</a> 
+  <a class="button" href="/pigeons/<%= @pigeon.id %>/edit">Edit</a>  
+  <a class="button" href="/pigeons/<%= @pigeon.id %>/destroy">Destroy</a>
 
 <%= erb :'layouts/_footer' %>

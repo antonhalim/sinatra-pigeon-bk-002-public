@@ -28,19 +28,12 @@ class PigeonsController < Sinatra::Base
     erb :'pigeons/show'
   end
 
-  #edit
-  get '/pigeons/:id/edit' do
-    @pigeon = Pigeon.get(params[:id])
-    erb :'pigeons/edit'
-  end
-
   #create
   post '/pigeons' do
     p = Pigeon.new
     p.name = params[:name]
     p.gender = params[:gender]
-    p.color = []
-    p.color << params[:color]
+    p.color = params[:color]
     p.lives = params[:lives]
     if p.save
       redirect to('/pigeons')
@@ -49,13 +42,18 @@ class PigeonsController < Sinatra::Base
     end
   end
 
+  #edit
+  get '/pigeons/:id/edit' do
+    @pigeon = Pigeon.get(params[:id])
+    erb :'pigeons/edit'
+  end
+
   #update
   post '/pigeons/:id/update' do
     p = Pigeon.get(params[:id])
     p.name = params[:name]
     p.gender = params[:gender]
-    p.color ||= []
-    p.color << params[:color]
+    p.color = params[:color]
     p.lives = params[:lives]
     if p.save
       redirect to('/pigeons')
@@ -65,7 +63,7 @@ class PigeonsController < Sinatra::Base
   end
 
   #destroy
-  post '/pigeons/:id/destroy' do
+  get '/pigeons/:id/destroy' do
     p = Pigeon.get(params[:id])
     if p.destroy
       redirect to('/pigeons')
