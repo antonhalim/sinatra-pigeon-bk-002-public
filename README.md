@@ -1,7 +1,7 @@
-----
+---
 language: ruby
 tags: sinatra, forms, hashes, object orientation, mvc, rest, erb
-----
+---
 
 # Sinatra Pigeon
 
