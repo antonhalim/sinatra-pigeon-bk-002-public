@@ -1,9 +1,9 @@
 source 'https://rubygems.org'
 
-gem 'data_mapper'
+gem 'activerecord', :require => "active_record"
 gem 'sinatra'
 gem 'sqlite3'
-gem 'dm-sqlite-adapter'
-gem 'sinatra-reloader'
+gem 'shotgun'
+gem 'tux'
 gem 'pry'
-
+gem 'rake'

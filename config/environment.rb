@@ -2,8 +2,10 @@ require 'bundler'
 
 Bundler.require
 
-DataMapper::Logger.new($stdout, :debug)
-DataMapper.setup(:default, "sqlite://#{Dir.pwd}/db/pigeons.db")
+ActiveRecord::Base.establish_connection(
+  :adapter => "sqlite3",
+  :database => "development"
+)
 
 require_relative '../app/models/pigeon'
 require_relative '../app/controllers/pigeons_controller'

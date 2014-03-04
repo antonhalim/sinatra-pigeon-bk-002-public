@@ -4,7 +4,12 @@ end
 
 #setup table schema
 task :setup => :environment do
-  Pigeon.auto_migrate!
+  Dir.glob("db/migrate/*").each do |f|
+    migration_name = f.gsub("db/migrate/", "").gsub(".rb", "").gsub(/\d+/, "").split("_").collect(&:capitalize).join
+    begin
+      Kernel.const_get(migration_name).migrate(:up)
+    rescue; end
+  end
 end
 
 # seed the db
@@ -65,11 +70,11 @@ end
 
 #reset
 task :reset => :environment do
-  Pigeon.all.destroy
-  DataMapper.repository(:default).adapter.execute("DROP TABLE pigeons")
+  Pigeon.destroy_all
+  ActiveRecord::Base.connection.execute("DROP TABLE IF EXISTS pigeons")
 end
 
 #run server
 task :server => :environment do
-  `rackup config.ru`
+  `bundle exec shotgun`
 end
