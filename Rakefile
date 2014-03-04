@@ -7,6 +7,7 @@ task :setup => :environment do
   Dir.glob("db/migrate/*").each do |f|
     migration_name = f.gsub("db/migrate/", "").gsub(".rb", "").gsub(/\d+/, "").split("_").collect(&:capitalize).join
     begin
+      require_relative f
       Kernel.const_get(migration_name).migrate(:up)
     rescue; end
   end
