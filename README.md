@@ -1,6 +1,6 @@
 ---
-language: ruby
-tags: sinatra, forms, hashes, object orientation, mvc, rest, erb
+  language: ruby
+  tags: sinatra, forms, hashes, object orientation, mvc, rest, erb
   resources: 1
 ---
 
