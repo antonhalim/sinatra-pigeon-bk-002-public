@@ -1,6 +1,7 @@
 ---
 language: ruby
 tags: sinatra, forms, hashes, object orientation, mvc, rest, erb
+  resources: 1
 ---
 
 # Sinatra Pigeon
@@ -42,3 +43,7 @@ Fill in these views with the appropriate ERB code and HTML to match the example 
 Run `rackup` or `rake server` in terminal to test out the web app at localhost:9292 
 
 Deliver your solution in master branch by pushing to your personal github repo and paste repo URL into the Piazza post for this HW.
+
+## Resources
+* [Heroku](http://www.heroku.com/) - [Pigeon App](http://sinatra-pigeon.herokuapp.com/pigeons)
+* [Screencasts](http://screencasts.org/) - [Using ActiveRecord with Sinatra](http://screencasts.org/episodes/activerecord-with-sinatra)
