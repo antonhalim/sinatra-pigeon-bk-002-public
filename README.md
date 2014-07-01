@@ -12,15 +12,12 @@ Create a Sinatra Web Application that allows us to browse a list of all pigeons,
 
 # Instructions
 
-First fork this repo. 
-Then clone your fork and cd into that directory.
-
-From terminal run the folling commands:
-
-1. `bundle install`
-2. `rake reset`
-3. `rake setup`
-4. `rake seed`
+* Fork this repo. 
+* Clone your fork and cd into the newly created directory.
+* From terminal run `bundle install`. 
+* To view a list of available rake tasks, run `rake -T`.
+* Write your migration for pigeons. Take a look at `db/seeds.rb` for table's structure hints.
+* In `app/models/pigeons.rb`, write your pigeon model.
 
 In file /app/controllers/pigeons_controller.rb make use of the appropriate RESTful paths to create, read, update, and destroy pigeons. Include the following paths
 
@@ -38,11 +35,9 @@ These routes will map to the appropriate views /app/views/pigeons
 - show.erb
 - edit.erb
 
-Fill in these views with the appropriate ERB code and HTML to match the example solution at: [http://sinatra-pigeon.herokuapp.com/](http://sinatra-pigeon.herokuapp.com/)
+Fill in these views with the appropriate ERB code and HTML to match the example solution at: [http://sinatra-pigeon.herokuapp.com/](http://sinatra-pigeon.herokuapp.com/).
 
-Run `rackup` or `rake server` in terminal to test out the web app at localhost:9292 
-
-Deliver your solution in master branch by pushing to your personal github repo and paste repo URL into the Piazza post for this HW.
+Run `shotgun` in terminal to test out the web app at [localhost:9393/](http://localhost:9393/).
 
 ## Resources
 * [Heroku](http://www.heroku.com/) - [Pigeon App](http://sinatra-pigeon.herokuapp.com/pigeons)
