@@ -1,11 +1,11 @@
 require 'spec_helper'
 
 describe "PigeonsController" do
-  describe "GET /" do
+  describe "GET /pigeons" do
     before do
       Pigeon.create(name: "Cher Ami" , color: "red, grey", lives: "Paris"        , gender: "female")
       Pigeon.create(name: "G. I. Joe", color: "pink, tan", lives: "Great Britain", gender: "male"  )
-      get '/'
+      get '/pigeons'
     end
 
     it "responds with a 200 status code" do
@@ -21,7 +21,7 @@ describe "PigeonsController" do
   describe "GET /pigeons/:id/" do
     before do
       cher = Pigeon.create(name:  "Cher Ami", color: "red, grey", lives: "Paris",         gender: "female")
-      get "/actors/#{cher.id}"
+      get "/pigeons/#{cher.id}"
     end
 
     it "responds with a 200 status code" do
