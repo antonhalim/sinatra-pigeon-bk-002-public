@@ -38,6 +38,7 @@ Create a Sinatra app that lists all pigeons, can create new ones, shows individu
 * Fill in these views with the appropriate ERB code and HTML to match the example solution at:  
   * [http://sinatra-pigeon.herokuapp.com/](http://sinatra-pigeon.herokuapp.com/).
 * Run `shotgun` in terminal to test out the web app at [localhost:9393/](http://localhost:9393/).
+* Run `rake db:migrate SINATRA_ENV=test` before running `rspec`.
 
 ## Resources
 * [Heroku](http://www.heroku.com/) - [Pigeon App](http://sinatra-pigeon.herokuapp.com/pigeons)
