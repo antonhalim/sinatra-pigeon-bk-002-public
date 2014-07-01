@@ -8,7 +8,7 @@
 
 # Deliverables
 
-Create a Sinatra Web Application that allows us to browse a list of all pigeons, create new pigeons, see individual pigeons and their characteristics on their own, edit a pigeon, and delete pigeons.
+Create a Sinatra app that lists all pigeons, can create new ones, shows individual pigeons and their characteristics on their own, edits a pigeon, and deletes one pigeon at time.
 
 # Instructions
 
