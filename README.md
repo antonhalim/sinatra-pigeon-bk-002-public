@@ -17,27 +17,24 @@ Create a Sinatra app that lists all pigeons, can create new ones, shows individu
 * From terminal run `bundle install`. 
 * To view a list of available rake tasks, run `rake -T`.
 * Write your migration for pigeons. Take a look at `db/seeds.rb` for table's structure hints.
+* Run `rake db:migrate` to migrate the pigeon table.
+* Run `rake db:seed` to load the information in the seed file into your database.
 * In `app/models/pigeons.rb`, write your pigeon model.
-
-In file /app/controllers/pigeons_controller.rb make use of the appropriate RESTful paths to create, read, update, and destroy pigeons. Include the following paths
-
-- /pigeons
-- /pigeons/new
-- /pigeons/:id
-- /pigeons/:id/edit
-- /pigeons/:id/update
-- /pigeons/:id/destroy
-
-These routes will map to the appropriate views /app/views/pigeons
-
-- index.erb
-- new.erb
-- show.erb
-- edit.erb
-
-Fill in these views with the appropriate ERB code and HTML to match the example solution at: [http://sinatra-pigeon.herokuapp.com/](http://sinatra-pigeon.herokuapp.com/).
-
-Run `shotgun` in terminal to test out the web app at [localhost:9393/](http://localhost:9393/).
+* Flesh out the `app/controllers/pigeons_controller.rb` and views to fulfill the requirements below. Remember to make use of the appropriate RESTful paths to create, read, update, and destroy pigeons. Include the following paths:
+  * /pigeons
+  * /pigeons/new
+  * /pigeons/:id
+  * /pigeons/:id/edit
+  * /pigeons/:id/update
+  * /pigeons/:id/destroy
+* These routes will map to the appropriate views /app/views/pigeons
+  * index.erb
+  * new.erb
+  * show.erb
+  * edit.erb
+* Fill in these views with the appropriate ERB code and HTML to match the example solution at:  
+  * [http://sinatra-pigeon.herokuapp.com/](http://sinatra-pigeon.herokuapp.com/).
+* Run `shotgun` in terminal to test out the web app at [localhost:9393/](http://localhost:9393/).
 
 ## Resources
 * [Heroku](http://www.heroku.com/) - [Pigeon App](http://sinatra-pigeon.herokuapp.com/pigeons)
