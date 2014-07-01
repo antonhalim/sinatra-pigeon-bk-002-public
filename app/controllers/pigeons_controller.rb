@@ -1,7 +1,9 @@
 class PigeonsController < ApplicationController
 
   get '/pigeons' do 
-    # your code here
+    @pigeons = Pigeon.all
+    binding.pry
+    erb :'pigeons/index'
   end
 
 end
