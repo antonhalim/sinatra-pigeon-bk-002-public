@@ -1,11 +1,11 @@
-require 'bundler'
+ENV['SINATRA_ENV'] ||= "development"
 
-Bundler.require
+require 'bundler/setup'
+Bundler.require(:default, ENV['SINATRA_ENV'])
 
 ActiveRecord::Base.establish_connection(
   :adapter => "sqlite3",
-  :database => "development"
+  :database => "db/sinatra_pigeon#{ENV['SINATRA_ENV']}.sqlite"
 )
 
-require_relative '../app/models/pigeon'
-require_relative '../app/controllers/pigeons_controller'
+require_all 'app'
