@@ -1,7 +1,7 @@
-class PigeonsController < Sinatra::Base
-  set :views, Proc.new { File.join(root, "../views/") }
+class PigeonsController < ApplicationController
 
-  # start creating routes here such as get '/' do etc...
-
+  get '/pigeons' do 
+    # your code here
+  end
 
 end
