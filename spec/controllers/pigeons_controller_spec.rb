@@ -3,8 +3,18 @@ require 'spec_helper'
 describe "PigeonsController" do
   describe "index page: GET /pigeons" do
     before do
-      Pigeon.create(name: "Cher Ami" , color: "red, grey", lives: "Paris"        , gender: "female")
-      Pigeon.create(name: "G. I. Joe", color: "pink, tan", lives: "Great Britain", gender: "male"  )
+      Pigeon.create(
+        name:   "Cher Ami", 
+        color:  "red, grey", 
+        lives:  "Paris", 
+        gender: "female"
+      )
+      Pigeon.create(
+        name:   "G. I. Joe",
+        color:  "pink, tan",
+        lives:  "Great Britain",
+        gender: "male"
+      )
       get '/pigeons'
     end
 
@@ -18,9 +28,14 @@ describe "PigeonsController" do
     end
   end
 
-  describe "show page: GET /pigeons/:id/" do
+  describe "show page: GET /pigeons/:id" do
     before do
-      cher = Pigeon.create(name:  "Cher Ami", color: "red, grey", lives: "Paris",         gender: "female")
+      cher = Pigeon.create(
+        name:   "Cher Ami",
+        color:  "red, grey", 
+        lives:  "Paris",         
+        gender: "female"
+      )
       get "/pigeons/#{cher.id}"
     end
 
@@ -37,7 +52,12 @@ describe "PigeonsController" do
 
   describe "edit page: GET /pigeons/:id/edit" do
     before do
-      cher = Pigeon.create(name:  "Cher Ami", color: "red, grey", lives: "Paris",         gender: "female")
+      cher = Pigeon.create(
+        name:   "Cher Ami", 
+        color:  "red, grey", 
+        lives:  "Paris",         
+        gender: "female"
+      )
       get "/pigeons/#{cher.id}/edit"
     end
 
@@ -66,14 +86,15 @@ describe "PigeonsController" do
     end
   end
 
-  describe "POST /pigeons" do
+  describe "create action: POST /pigeons" do
     before do
-      post '/pigeons', {
-       :name =>"Phil",
-       :gender=>"male",
-       :color=>"black, grey",
-       :lives=>"Meatpacking District"
+      params = {
+       :name   => "Phil",
+       :gender => "male",
+       :color  => "black, grey",
+       :lives  => "Meatpacking District"
       }
+      post '/pigeons', params
       follow_redirect!
     end
 
@@ -83,10 +104,20 @@ describe "PigeonsController" do
     end
   end
 
-  describe "destroy: POST /pigeons/id" do
+  describe "destroy: DELETE /pigeons/id" do
     before do
-      cher = Pigeon.create(name: "Cher Ami" , color: "red, grey", lives: "Paris"        , gender: "female")
-      joey = Pigeon.create(name: "G. I. Joe", color: "pink, tan", lives: "Great Britain", gender: "male"  )
+      cher = Pigeon.create(
+        name:   "Cher Ami", 
+        color:  "red, grey", 
+        lives:  "Paris", 
+        gender: "female"
+      )
+      joey = Pigeon.create(
+        name:   "G. I. Joe",
+        color:  "pink, tan",
+        lives:  "Great Britain",
+        gender: "male"
+      )
       delete "/pigeons/#{cher.id}"
       follow_redirect!
     end
@@ -100,22 +131,34 @@ describe "PigeonsController" do
 
   describe "update: PATCH /pigeons/id" do
     before do
-      cher = Pigeon.create(name: "Cher Ami" , color: "red, grey", lives: "Paris"        , gender: "female")
-      joey = Pigeon.create(name: "G. I. Joe", color: "pink, tan", lives: "Great Britain", gender: "male"  )
-      patch "/pigeons/#{cher.id}", {
-        :name =>"Cher Ami",
-        :gender=>"female",
-        :color=>"green, blue",
-        :lives=>"Paris"
+      @cher = Pigeon.create(
+        name:   "Cher Ami", 
+        color:  "red, grey", 
+        lives:  "Paris", 
+        gender: "female"
+      )
+      joey = Pigeon.create(
+        name:   "G. I. Joe",
+        color:  "pink, tan",
+        lives:  "Great Britain",
+        gender: "male"
+      )
+      params = {
+        :name   => "Cher Ami",
+        :gender => "female",
+        :color  => "green, blue",
+        :lives  => "Paris"
       }
+      patch "/pigeons/#{@cher.id}", params
       follow_redirect!
     end
 
-    it "redirects to the pigeons index page" do
-      expect(last_request.url).to eq("http://example.org/pigeons")
+    it "redirects to the pigeons show page" do
+      expect(last_request.url).to eq("http://example.org/pigeons/#{@cher.id}")
       expect(last_response.body).to include("Cher Ami")
       expect(last_response.body).to include("green, blue")
       expect(last_response.body).to_not include("red, grey")
+      expect(last_response.body).to_not include("G. I. Joe")
     end
   end
 

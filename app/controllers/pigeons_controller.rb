@@ -1,7 +1,2 @@
-class PigeonsController < ApplicationController
-
-  get '/pigeons' do 
-    # your code here
-  end
-
-end
+# create your PigeonsController here
+# it should inherit from ApplicationController
