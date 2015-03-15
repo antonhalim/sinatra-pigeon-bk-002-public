@@ -24,12 +24,13 @@ Create a Sinatra app that lists all pigeons, can create new ones, shows individu
 
 ## Requirements
 * Include the following paths:
-  * /pigeons
-  * /pigeons/new
-  * /pigeons/:id
-  * /pigeons/:id/edit
-  * /pigeons/:id/update - remember to add `use Rack::MethodOverride` to the `config.ru` file for patch requests
-  * /pigeons/:id/destroy
+  * GET /pigeons
+  * POST /pigeons
+  * GET /pigeons/new
+  * GET /pigeons/:id
+  * GET /pigeons/:id/edit
+  * PATCH /pigeons/:id - remember to add `use Rack::MethodOverride` to the `config.ru` file for patch requests
+  * DELETE /pigeons/:id
 * These routes will map to the appropriate views  `app/views/pigeon`:
   * index.erb
   * new.erb

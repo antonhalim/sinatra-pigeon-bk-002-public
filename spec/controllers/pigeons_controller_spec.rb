@@ -83,11 +83,11 @@ describe "PigeonsController" do
     end
   end
 
-  describe "destroy: POST /pigeons/id/destroy" do
+  describe "destroy: POST /pigeons/id" do
     before do
       cher = Pigeon.create(name: "Cher Ami" , color: "red, grey", lives: "Paris"        , gender: "female")
       joey = Pigeon.create(name: "G. I. Joe", color: "pink, tan", lives: "Great Britain", gender: "male"  )
-      post "/pigeons/#{cher.id}/destroy"
+      delete "/pigeons/#{cher.id}"
       follow_redirect!
     end
 
@@ -98,11 +98,11 @@ describe "PigeonsController" do
     end
   end
 
-  describe "update: PATCH /pigeons/id/update" do
+  describe "update: PATCH /pigeons/id" do
     before do
       cher = Pigeon.create(name: "Cher Ami" , color: "red, grey", lives: "Paris"        , gender: "female")
       joey = Pigeon.create(name: "G. I. Joe", color: "pink, tan", lives: "Great Britain", gender: "male"  )
-      patch "/pigeons/#{cher.id}/update", {
+      patch "/pigeons/#{cher.id}", {
         :name =>"Cher Ami",
         :gender=>"female",
         :color=>"green, blue",
