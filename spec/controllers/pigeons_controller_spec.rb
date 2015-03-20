@@ -65,7 +65,7 @@ describe "PigeonsController" do
       expect(last_response).to be_ok
     end
 
-    it "renders the show page for the pigeons's list of attributes" do
+    it "renders the edit page for the pigeon" do
       expect(last_response.body).to include("Cher Ami")
       expect(last_response.body).to include("red, grey")
       expect(last_response.body).to include("Paris")
