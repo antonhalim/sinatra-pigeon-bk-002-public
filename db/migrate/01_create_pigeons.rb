@@ -1,5 +1,10 @@
-# write your pigeon migration here
-# look at the seed.rb file to see
-# what columns to include
+class CreatePigeons < ActiveRecord::Migration
 
-# remember to inherit from the correct ActiveRecord module
+	def change
+		create_table :pigeons do |t|
+			t.string :name, :color, :gender, :lives
+
+			t.timestamps null: false
+		end
+	end
+end

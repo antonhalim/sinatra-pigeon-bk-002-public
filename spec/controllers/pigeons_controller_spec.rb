@@ -4,9 +4,9 @@ describe "PigeonsController" do
   describe "index page: GET /pigeons" do
     before do
       Pigeon.create(
-        name:   "Cher Ami", 
-        color:  "red, grey", 
-        lives:  "Paris", 
+        name:   "Cher Ami",
+        color:  "red, grey",
+        lives:  "Paris",
         gender: "female"
       )
       Pigeon.create(
@@ -32,8 +32,8 @@ describe "PigeonsController" do
     before do
       cher = Pigeon.create(
         name:   "Cher Ami",
-        color:  "red, grey", 
-        lives:  "Paris",         
+        color:  "red, grey",
+        lives:  "Paris",
         gender: "female"
       )
       get "/pigeons/#{cher.id}"
@@ -53,9 +53,9 @@ describe "PigeonsController" do
   describe "edit page: GET /pigeons/:id/edit" do
     before do
       cher = Pigeon.create(
-        name:   "Cher Ami", 
-        color:  "red, grey", 
-        lives:  "Paris",         
+        name:   "Cher Ami",
+        color:  "red, grey",
+        lives:  "Paris",
         gender: "female"
       )
       get "/pigeons/#{cher.id}/edit"
@@ -107,9 +107,9 @@ describe "PigeonsController" do
   describe "destroy: DELETE /pigeons/id" do
     before do
       cher = Pigeon.create(
-        name:   "Cher Ami", 
-        color:  "red, grey", 
-        lives:  "Paris", 
+        name:   "Cher Ami",
+        color:  "red, grey",
+        lives:  "Paris",
         gender: "female"
       )
       joey = Pigeon.create(
@@ -132,9 +132,9 @@ describe "PigeonsController" do
   describe "update: PATCH /pigeons/id" do
     before do
       @cher = Pigeon.create(
-        name:   "Cher Ami", 
-        color:  "red, grey", 
-        lives:  "Paris", 
+        name:   "Cher Ami",
+        color:  "red, grey",
+        lives:  "Paris",
         gender: "female"
       )
       joey = Pigeon.create(
